@@ -22,8 +22,8 @@
       "description": "Get this value from https://my.telegram.org",
       "value": ""
     },
-    "DROPLINK_API": {
-      "description": "Enter your DROPLINK API KEY only if METHOD is selected to droplink. Get your API from https://droplink.co/member/tools/api",
+    "GpLINKS_API": {
+      "description": "Enter your GPLINKS API KEY only if METHOD is selected to droplink. Get your API from https://droplink.co/member/tools/api",
       "value": "0"
     },
     "MDISK_API": {
