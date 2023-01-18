@@ -49,8 +49,8 @@ async def main_convertor_handler(message:Message, type:str, edit_caption:bool=Fa
     # A dictionary which contains the methods to be called.
     METHODS = {
         "mdisk": replace_mdisk_link,
-        "droplink": replace_link,
-        "mdlink": mdisk_droplink_convertor
+        "gplinks": replace_link,
+        "mdlink": mdisk_gplinsk_convertor
     }
 
     # Replacing the username with your username.
@@ -82,7 +82,7 @@ async def main_convertor_handler(message:Message, type:str, edit_caption:bool=Fa
         
 
     if message.text:
-        if user_method in ["droplink", "mdlink"] :
+        if user_method in ["gplinks", "mdlink"] :
             if '|' not in caption:
                 pass
             else:
@@ -135,7 +135,7 @@ async def reply_markup_handler(message:Message, method_func):
         return reply_markup
 
 
-####################  droplink  ####################
+####################  gplinks  ####################
 async def get_shortlink(link, x=""):
     https = link.split(":")[0]
     if "http" == https:
@@ -143,7 +143,7 @@ async def get_shortlink(link, x=""):
         link = link.replace("http", https)
 
     url = f'{WEBSITE}/api'
-    params = {'api': DROPLINK_API,
+    params = {'api': GPLINKS_API,
               'url': link,
               'alias': x
               }
@@ -159,25 +159,25 @@ async def get_shortlink(link, x=""):
 
     except Exception as e:
         logger.error(e)
-        links = f'{WEBSITE}/st?api={DROPLINK_API}&url={link}'
+        links = f'{WEBSITE}/st?api={GPLINKS_API}&url={link}'
         return await tiny_url_main(links)
 
 
 async def replace_link(text, x=""):
     links = await extract_link(text)
 
-    for link in links:
+    for link in links: 
 
         long_url = link
         
         # Link Bypass Configuration
-        droplink_url = await is_droplink_url(link)  
+        droplink_url = await is_gplinks_url(link)  
 
-        if LINK_BYPASS and droplink_url or not droplink_url:
-            # Bypass Droplink URL
-            if LINK_BYPASS and droplink_url:
+        if LINK_BYPASS and gplinks_url or not gplinks_url:
+            # Bypass gplinks URL
+            if LINK_BYPASS and gplinks_url:
                 try:
-                    link = await droplink_bypass(link)
+                    link = await gplinks_bypass(link)
                 except Exception as e:
                     logger.exception(e)
 
@@ -247,18 +247,18 @@ async def extract_link(string):
     urls = re.findall(regex, string)
     return ["".join(x) for x in urls]
 
-# Incase droplink server fails, bot will return https://droplink.co/st?api={DROPLINK_API}&url={link} 
+# Incase gplinks server fails, bot will return https://gplinks.in/st?api={GPLINKS_API}&url={link} 
 
 # TinyUrl 
 async def tiny_url_main(url):
     s = pyshorteners.Shortener()
     return s.tinyurl.short(url)
 
-# todo -> bypass long droplink url
-async def droplink_bypass_handler(text):
-    links = re.findall(r'https?://droplink.co[^\s"*<>]+', text)	
+# todo -> bypass long gplinks url
+async def gplinks_bypass_handler(text):
+    links = re.findall(r'https?://gplinks.in[^\s"*<>]+', text)	
     for link in links:
-        bypassed_link = await droplink_bypass(link)
+        bypassed_link = await gplinks_bypass(link)
         text = text.replace(link, bypassed_link)
 
     return text
