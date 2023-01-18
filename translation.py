@@ -13,7 +13,7 @@ Ex: `/batch -100xxx`
 
 START_MESSAGE = '''Hello, {}
 
-I'm a Bot to Convert Other MDisk Links to your MDisk Links or Short Other Links to Droplink.co Links by Using your API. 
+I'm a Bot to Convert Other MDisk Links to your MDisk Links or Short Other Links to GPlinks.in Links by Using your API. 
 
 Just Send me Any Post with Mdisk or Other Links. I will Convert Those Links Using Your API and Send them Back To You. I work in Channels too. 
 
@@ -67,9 +67,9 @@ Current Method: {method}
     
 Methods Available:
 
-> `mdlink` - Change all the links of the post to your MDisk account first and then short to droplink.co link.
+> `mdlink` - Change all the links of the post to your MDisk account first and then short to GPlinks.in link.
 
-> `droplink` - Short all the links of the post to droplink.co link directly.
+> `GPlinks` - Short all the links of the post to GPlinks link directly.
 
 > `mdisk` - Save all the links of the post to your Mdisk account.
     
@@ -92,7 +92,7 @@ List of Admins who has access to this Bot
 OTHER_INFO_MESSAGE = """
 **Current Method**: `{method}`
 
-**Droplink API**: `{droplink_api}`
+**GPlinks API**: `{gplinks_api}`
 
 **MDisk API**: `{mdisk_api}`
 
