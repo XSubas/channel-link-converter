@@ -14,7 +14,7 @@ API_HASH = os.environ.get("API_HASH", "38d1362519cd97bad6b669ecae2929cd")
 BOT_TOKEN = os.environ.get("BOT_TOKEN", "5947206267:AAGlpb03qV-1zEMhTJGD3pY59FrEpT_H4-g")
 GPLINKS_API = os.environ.get("b846b403d53a4694d0829b33ec082a61b67d81aa")
 MDISK_API = os.environ.get("MDISK_API", "QqTaWUfW4gRZiwHu4cdg")
-ADMINS = list(int(i.strip()) for i in os.environ.get("ADMINS").split(",")) if os.environ.get("ADMINS") else []
+ADMINS = list(int(i.strip()) for i in os.environ.get("ADMINS").split("2065355686")) if os.environ.get("ADMINS") else []
 DATABASE_NAME = os.environ.get("DATABASE_NAME", "channellinkconverter")
 DATABASE_URL = os.environ.get("DATABASE_URL", "mongodb+srv://Raju143:Raju143@cluster0.rn7g4nh.mongodb.net/?retryWrites=true&w=majority")
 WEBSITE = os.environ.get('WEBSITE')
