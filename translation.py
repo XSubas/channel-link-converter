@@ -69,7 +69,7 @@ Methods Available:
 
 > `mdlink` - Change all the links of the post to your MDisk account first and then short to GPlinks.in link.
 
-> `GPlinks` - Short all the links of the post to GPlinks link directly.
+> `GPlinks` - Short all the links of the post to GPlinks.in link directly.
 
 > `mdisk` - Save all the links of the post to your Mdisk account.
     
@@ -92,7 +92,7 @@ List of Admins who has access to this Bot
 OTHER_INFO_MESSAGE = """
 **Current Method**: `{method}`
 
-**GPlinks API**: `{gplinks_api}`
+**GPlinks API**: `{b846b403d53a4694d0829b33ec082a61b67d81aa}`
 
 **MDisk API**: `{mdisk_api}`
 
